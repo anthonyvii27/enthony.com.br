@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
+const withImages = require('next-images');
+
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+    staticPageGenerationTimeout: 0,
+    reactStrictMode: true,
+    images: {
+        domains: ['']
+    }
 }
 
-module.exports = nextConfig
+module.exports = withImages(nextConfig);
