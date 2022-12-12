@@ -16,7 +16,8 @@
         "@typescript-eslint",
         "eslint-plugin-import-helpers",
         "prettier",
-        "react-hooks"
+        "react-hooks",
+        "unused-imports"
     ],
     "rules": {
         "no-console": "off",
@@ -69,11 +70,14 @@
             ]
         }
     ],
+    "unused-imports/no-unused-imports": "error",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-unused-vars": [
         "error",
         {
-            "argsIgnorePattern": "_"
+            "ignoreRestSiblings": true,
+            "destructuredArrayIgnorePattern": "[A-Z]",
+            "caughtErrors": "none"
         }
     ],
     "@typescript-eslint/no-explicit-any": "off",
