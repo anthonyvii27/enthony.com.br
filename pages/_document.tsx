@@ -27,13 +27,15 @@ class MyDocument extends Document {
             <Html lang="pt-br">
                 <Head>
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
-                    <meta charSet="UTF-8" />
-                    <meta httpEquiv="content-language" content="pt-br" />
                     <link
                         rel="preconnect"
                         href="https://fonts.gstatic.com"
                         crossOrigin="anonymous"
                     />
+
+                    <meta charSet="UTF-8" />
+                    <meta httpEquiv="content-language" content="pt-br" />
+
                     <link
                         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
                         rel="stylesheet"
