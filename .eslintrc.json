@@ -17,7 +17,8 @@
         "eslint-plugin-import-helpers",
         "prettier",
         "react-hooks",
-        "unused-imports"
+        "unused-imports",
+        "testing-library"
     ],
     "rules": {
         "no-console": "off",
@@ -30,6 +31,19 @@
         "react-hooks/exhaustive-deps": "warn",
         "react/prop-types": "off",
         "react/no-array-index-key": "off",
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": [
+                    "test.{ts,tsx}",
+                    "test-*.{ts,tsx}",
+                    "**/*{.,_}{test,spec}.{ts,tsx}",
+                    "**/jest.config.ts",
+                    "**/jest.setup.ts"
+                ],
+                "optionalDependencies": false
+            }
+        ],
         "import-helpers/order-imports": [
             "warn",
             {
@@ -60,14 +74,6 @@
             "jsx": "never",
             "ts": "never",
             "tsx": "never"
-        }
-    ],
-    "import/no-extraneous-dependencies": [
-        "error",
-        {
-            "devDependencies": [
-                "test/**/*"
-            ]
         }
     ],
     "unused-imports/no-unused-imports": "error",
@@ -110,5 +116,11 @@
                 "project": "tsconfig.json"
             }
         }
-    }
+    },
+    "overrides": [
+        {
+            "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+            "extends": ["plugin:testing-library/react"]
+        }
+    ]
 }
